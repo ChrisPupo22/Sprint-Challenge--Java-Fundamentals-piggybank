@@ -2,17 +2,20 @@ package piggybank;
 
 public abstract class AbstractMoney {
 
-    private double amount; 
-    private String name; 
+    protected int amount; 
+    protected double value; 
 
+     public AbstractMoney() {
+
+
+    }
     
-    public AbstractMoney(String name, double amount) {
+    public AbstractMoney(int amount) {
 
         this.amount = amount; 
-        this.name = name; 
     }
 
-    public double getAmount() {
+    public int getAmount() {
 
         return amount; 
     }
@@ -21,17 +24,20 @@ public abstract class AbstractMoney {
 
         return name; 
     }
+    
+    public abstract double getValue(); 
 
-    public abstract double getValue();
-    public abstract double getTotal(double amount);
+    public double getTotal() {
 
+        return amount * value; 
+    }
     
     @Override
     public String toString() {
 
         return "Abstract Money{" + 
-        "Name'" + name + '\'' + 
-        ", Amount " + amount + 
+        "Amount:'" + amount  + '\'' +  
+        ", Value: " + value +
         '}';  
     }
 }

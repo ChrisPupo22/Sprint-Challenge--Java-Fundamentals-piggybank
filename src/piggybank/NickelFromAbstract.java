@@ -2,20 +2,21 @@ package piggybank;
 
 public class NickelFromAbstract extends AbstractMoney {
 
-    public NickelFromAbstract(String name, double amount) {
+    public NickelFromAbstract(int amount) {
 
-        super(name, amount);
+        super(amount);
+        value = 0.05; 
     }
 
     @Override
     public double getValue() {
 
-        return 0.05; 
+        return value; 
     }
 
     @override
-    public double getTotal(double amount) {
+    public double getTotal(int amount) {
 
-        return amount * 0.05; 
+        return amount * value; 
     }
 }

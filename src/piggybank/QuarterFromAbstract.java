@@ -2,20 +2,21 @@ package piggybank;
 
 public class QuarterFromAbstract extends AbstractMoney {
 
-    public QuarterFromAbstract(String name, double amount) {
+    public QuarterFromAbstract(int amount) {
 
-        super(name, amount);
+        super(amount);
+        value = 0.25; 
     }
 
     @Override
     public double getValue() {
 
-        return 1.00; 
+        return value; 
     }
 
     @override
-    public double getTotal(double amount) {
+    public double getTotal(int amount) {
 
-        return amount * 0.25; 
+        return amount * value; 
     }
 }
